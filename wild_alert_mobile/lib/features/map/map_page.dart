@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:wild_alert_mobile/features/map/bloc/map_blocs.dart';
+import 'package:wild_alert_mobile/features/map/bloc/map_state.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({super.key});
@@ -24,12 +27,16 @@ class _MapPageState extends State<MapPage> {
         title: const Text('Wild Alert'),
         elevation: 2,
       ),
-      body: GoogleMap(
-        onMapCreated: _onMapCreated,
-        initialCameraPosition: CameraPosition(
-          target: _center,
-          zoom: 11.0,
-        ),
+      body: BlocBuilder<MapBlocs, MapState>(
+        builder: (context, state) {
+          return GoogleMap(
+            onMapCreated: _onMapCreated,
+            initialCameraPosition: CameraPosition(
+              target: _center,
+              zoom: 11.0,
+            ),
+          );
+        },
       ),
     );
   }
