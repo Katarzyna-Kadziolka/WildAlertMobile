@@ -3,8 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wild_alert_mobile/common/values/colors.dart';
 import 'package:wild_alert_mobile/common/widgets/application_widgets.dart';
+import 'package:wild_alert_mobile/features/alert/alert_page_widgets.dart';
 import 'package:wild_alert_mobile/features/alert/bloc/alert_blocs.dart';
+import 'package:wild_alert_mobile/features/alert/bloc/alert_events.dart';
 import 'package:wild_alert_mobile/features/alert/bloc/alert_state.dart';
+
+import '../../common/entities/Animal.dart';
 
 class AlertPage extends StatefulWidget {
   const AlertPage({super.key});
@@ -28,18 +32,14 @@ class _AlertPageState extends State<AlertPage> {
                 child: Column(
                   children: [
                     SizedBox(
-                      height: 100.h,
+                      height: 50.h,
                     ),
-                    Row(
-                      children: [
-
-                      ],
-                    )
+                    animalSelection(context),
                   ],
                 ),
               );
             },
-          )
+          ),
         ),
       ),
     );
