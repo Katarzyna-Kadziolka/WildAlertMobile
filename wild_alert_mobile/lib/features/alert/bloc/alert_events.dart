@@ -1,3 +1,5 @@
+import 'package:wild_alert_mobile/common/entities/Animal.dart';
+
 abstract class AlertEvents {
   const AlertEvents();
 }
@@ -12,12 +14,12 @@ class LongitudeEvent extends AlertEvents {
   const LongitudeEvent(this.longitude);
 }
 
-class TypeEvent extends AlertEvents {
-  final String type;
-  const TypeEvent(this.type);
+class AnimalEvent extends AlertEvents {
+  final Animal animal;
+  const AnimalEvent(this.animal);
 }
 
-class DescriptionEvent extends AlertEvents {
-  final String description;
-  const DescriptionEvent(this.description);
+class CommentsEvent extends AlertEvents {
+  final String comments;
+  const CommentsEvent(this.comments);
 }

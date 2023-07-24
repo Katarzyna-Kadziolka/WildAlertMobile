@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wild_alert_mobile/common/values/colors.dart';
 import 'package:wild_alert_mobile/common/widgets/application_widgets.dart';
+import 'package:wild_alert_mobile/features/alert/bloc/alert_blocs.dart';
+import 'package:wild_alert_mobile/features/alert/bloc/alert_state.dart';
 
 class AlertPage extends StatefulWidget {
   const AlertPage({super.key});
@@ -18,11 +22,24 @@ class _AlertPageState extends State<AlertPage> {
         child: Scaffold(
           backgroundColor: AppColors.primaryBackground,
           appBar: logoAppBar(),
-          body: SingleChildScrollView(
-            child: Column(
-              children: [Text("Hello")],
-            ),
-          ),
+          body: BlocBuilder<AlertBlocs, AlertState>(
+            builder: (context, state) {
+              return SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 100.h,
+                    ),
+                    Row(
+                      children: [
+
+                      ],
+                    )
+                  ],
+                ),
+              );
+            },
+          )
         ),
       ),
     );

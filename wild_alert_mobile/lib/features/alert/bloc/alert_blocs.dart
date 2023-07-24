@@ -6,8 +6,8 @@ class AlertBlocs extends Bloc<AlertEvents, AlertState> {
   AlertBlocs(): super(const AlertState()) {
     on<LatitudeEvent>(_latitudeEvent);
     on<LongitudeEvent>(_longitudeEvent);
-    on<TypeEvent>(_typeEvent);
-    on<DescriptionEvent>(_descriptionEvent);
+    on<AnimalEvent>(_animalEvent);
+    on<CommentsEvent>(_commentsEvent);
   }
 
   void _latitudeEvent(LatitudeEvent event, Emitter<AlertState> emit) {
@@ -18,11 +18,11 @@ class AlertBlocs extends Bloc<AlertEvents, AlertState> {
     emit(state.copyWith(longitude: event.longitude));
   }
 
-  void _typeEvent(TypeEvent event, Emitter<AlertState> emit) {
-    emit(state.copyWith(type: event.type));
+  void _animalEvent(AnimalEvent event, Emitter<AlertState> emit) {
+    emit(state.copyWith(animal: event.animal));
   }
 
-  void _descriptionEvent(DescriptionEvent event, Emitter<AlertState> emit) {
-    emit(state.copyWith(description: event.description));
+  void _commentsEvent(CommentsEvent event, Emitter<AlertState> emit) {
+    emit(state.copyWith(comments: event.comments));
   }
 }
