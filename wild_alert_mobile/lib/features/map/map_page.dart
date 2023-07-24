@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:wild_alert_mobile/common/values/colors.dart';
+import 'package:wild_alert_mobile/common/widgets/application_widgets.dart';
 import 'package:wild_alert_mobile/features/map/bloc/map_blocs.dart';
 import 'package:wild_alert_mobile/features/map/bloc/map_state.dart';
 
@@ -29,11 +32,20 @@ class _MapPageState extends State<MapPage> {
       ),
       body: BlocBuilder<MapBlocs, MapState>(
         builder: (context, state) {
-          return GoogleMap(
-            onMapCreated: _onMapCreated,
-            initialCameraPosition: CameraPosition(
-              target: _center,
-              zoom: 11.0,
+          return Container(
+            width: 360.w,
+            child: Stack(
+              alignment: Alignment.bottomCenter,
+              children: [
+                GoogleMap(
+                  onMapCreated: _onMapCreated,
+                  initialCameraPosition: CameraPosition(
+                    target: _center,
+                    zoom: 11.0,
+                  ),
+                ),
+                alertButton(() => {})
+              ],
             ),
           );
         },
