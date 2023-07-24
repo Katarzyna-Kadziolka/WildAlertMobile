@@ -29,7 +29,10 @@ class _MyAppState extends State<MyApp> {
             theme: ThemeData(
               appBarTheme: const AppBarTheme(
                 elevation: 1,
-                backgroundColor: AppColors.primarySecondaryBackground
+                backgroundColor: AppColors.primarySecondaryBackground,
+                iconTheme: IconThemeData(
+                  color: Colors.black,
+                )
               )
             ),
           onGenerateRoute: AppPages.generateRouteSettings,
