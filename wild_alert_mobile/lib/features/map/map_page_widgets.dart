@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:wild_alert_mobile/common/routes/names.dart';
 
 import '../../common/controllers/map_controller.dart';
 import '../../common/widgets/application_widgets.dart';
 
-Widget mainMap() {
+Widget mainMap(BuildContext context) {
   final MapController mapController = MapController();
   return Stack(
     alignment: Alignment.bottomCenter,
@@ -16,7 +17,7 @@ Widget mainMap() {
           zoom: 11.0,
         ),
       ),
-      alertButton(() => {})
+      alertButton(() => Navigator.of(context).pushNamed(AppRoutes.ALERT))
     ],
   );
 }
