@@ -34,3 +34,13 @@ Widget alertButton(Function() func ) {
     ),
   );
 }
+
+AppBar logoAppBar() {
+  return AppBar(
+    title: Container(
+      alignment: Alignment.centerLeft,
+      width: 200.w,
+      child: Image.asset('assets/Logo.png', fit: BoxFit.cover),
+    ),
+  );
+}
