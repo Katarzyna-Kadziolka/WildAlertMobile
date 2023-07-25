@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../values/colors.dart';
+import '../styles/colors.dart';
 
 Widget appText(String text) {
   return Text(

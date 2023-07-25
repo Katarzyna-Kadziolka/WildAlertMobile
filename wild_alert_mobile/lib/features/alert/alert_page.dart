@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:wild_alert_mobile/common/values/colors.dart';
+import 'package:wild_alert_mobile/common/styles/colors.dart';
 import 'package:wild_alert_mobile/common/widgets/application_widgets.dart';
 import 'package:wild_alert_mobile/features/alert/alert_page_widgets.dart';
 import 'package:wild_alert_mobile/features/alert/bloc/alert_blocs.dart';

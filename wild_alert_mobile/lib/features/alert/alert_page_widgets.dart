@@ -4,12 +4,13 @@ import 'package:wild_alert_mobile/features/alert/bloc/alert_blocs.dart';
 import 'package:wild_alert_mobile/features/alert/bloc/alert_events.dart';
 
 import '../../common/entities/Animal.dart';
-import '../../common/values/colors.dart';
+import '../../common/styles/colors.dart';
+import '../../common/widgets/application_widgets.dart';
 
 Widget _radioRow(BuildContext context, Animal animal, String translation) {
   return Row(
     children: [
-      Text(translation),
+      appText(translation),
       Radio<Animal>(
         value: Animal.boar,
         groupValue: context.read<AlertBlocs>().state.animal,
@@ -31,14 +32,10 @@ var animalTranslation = <Animal, String>{
 Widget animalSelection(BuildContext context) {
 
   return Row(
-    children: [
-      Row(
         children: [
           ...List.generate(animalTranslation.length, (index) =>
               _radioRow(context, animalTranslation.keys.elementAt(index), animalTranslation.values.elementAt(index))
           )
         ],
-      ),
-    ],
-  );
+      );
 }
