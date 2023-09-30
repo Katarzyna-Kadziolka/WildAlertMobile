@@ -69,7 +69,7 @@ Widget mainButton(Function() func) {
 //   );
 // }
 
-Widget buildTextField(String text){
+Widget buildTextField(){
   return Container(
     width: 325.w,
     height: 50.h,
@@ -86,34 +86,37 @@ Widget buildTextField(String text){
           margin: EdgeInsets.only(left: 12.w),
           child: Image.asset('assets/logo.png'),
         ),
-        SizedBox(
-          width: 270.w,
-          height: 50.h,
-          child: const TextField(
-            keyboardType: TextInputType.multiline,
+        Padding(
+          padding: EdgeInsets.only(top:15.h),
+          child: SizedBox(
+            width: 250.w,
+            height: 50.h,
+            child: const TextField(
+              keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
-                hintText: "Lokalizacja",
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.transparent
-                  ),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.transparent
-                  ),
-                ),
-                disabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.transparent
-                  ),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
+                  hintText: "Lokalizacja",
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(
                       color: Colors.transparent
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.transparent
+                    ),
+                  ),
+                  disabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.transparent
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Colors.transparent
+                    ),
                   ),
                 ),
-              ),
+            ),
           ),
         ),
         Container(

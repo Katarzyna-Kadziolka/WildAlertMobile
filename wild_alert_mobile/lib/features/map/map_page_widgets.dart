@@ -27,12 +27,12 @@ Widget mainMap(BuildContext context) {
       ),
       Positioned(
           child: Container(
-            margin: EdgeInsets.only(top: 66.h),
+            margin: EdgeInsets.only(top: 24.h),
             padding: EdgeInsets.only(left: 25.w, right: 25.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                buildTextField("Lokalizacja")
+                buildTextField()
               ],
             ),
           )
