@@ -25,6 +25,7 @@ class _AlertPageState extends State<AlertPage> {
       child: SafeArea(
         child: Scaffold(
           backgroundColor: AppColors.primaryBackground,
+          appBar: logoAppBar(),
           body: BlocBuilder<AlertBlocs, AlertState>(
             builder: (context, state) {
               return SingleChildScrollView(

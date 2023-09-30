@@ -59,19 +59,16 @@ Widget mainButton(Function() func) {
   );
 }
 
-// AppBar logoAppBar() {
-//   return AppBar(
-//     title: Container(
-//       alignment: Alignment.centerLeft,
-//       width: 200.w,
-//       child: Image.asset('assets/Logo.png', fit: BoxFit.cover),
-//     ),
-//   );
-// }
+AppBar logoAppBar() {
+  return AppBar(
+    title: Text("Dodaj zgłoszenie", style: TextStyle(
+        color: AppColors.primaryText, fontSize: 22.sp, fontWeight: FontWeight.normal),),
+  );
+}
 
 Widget buildTextField(){
   return Container(
-    width: 325.w,
+    width: 250.w,
     height: 50.h,
     decoration: BoxDecoration(
       color: AppColors.primarySecondaryBackground,
@@ -89,7 +86,7 @@ Widget buildTextField(){
         Padding(
           padding: EdgeInsets.only(top:15.h),
           child: SizedBox(
-            width: 250.w,
+            width: 175.w,
             height: 50.h,
             child: const TextField(
               keyboardType: TextInputType.multiline,
