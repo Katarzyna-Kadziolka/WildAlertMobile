@@ -18,7 +18,6 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: logoAppBar(),
       body: BlocBuilder<MapBlocs, MapState>(
         builder: (context, state) {
           return SizedBox(

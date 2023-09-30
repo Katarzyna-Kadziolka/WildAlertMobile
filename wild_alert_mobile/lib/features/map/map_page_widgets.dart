@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:wild_alert_mobile/common/routes/names.dart';
+import 'package:wild_alert_mobile/common/styles/colors.dart';
 
 import '../../common/controllers/map_controller.dart';
 import '../../common/widgets/application_widgets.dart';
@@ -8,7 +10,7 @@ import '../../common/widgets/application_widgets.dart';
 Widget mainMap(BuildContext context) {
   final MapController mapController = MapController();
   return Stack(
-    alignment: Alignment.bottomCenter,
+    alignment: Alignment.bottomLeft,
     children: [
       GoogleMap(
         onMapCreated: mapController.onMapCreated,
@@ -17,7 +19,24 @@ Widget mainMap(BuildContext context) {
           zoom: 11.0,
         ),
       ),
-      alertButton(() => Navigator.of(context).pushNamed(AppRoutes.ALERT))
+      Positioned(
+        top: 630,
+        left: 10,
+        right: 350,
+        child: alertButton(() => Navigator.of(context).pushNamed(AppRoutes.ALERT)),
+      ),
+      Positioned(
+          child: Container(
+            margin: EdgeInsets.only(top: 66.h),
+            padding: EdgeInsets.only(left: 25.w, right: 25.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                buildTextField("Lokalizacja")
+              ],
+            ),
+          )
+      ),
     ],
   );
 }

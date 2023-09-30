@@ -10,7 +10,7 @@ import '../../common/widgets/application_widgets.dart';
 Widget _radioRow(BuildContext context, Animal animal, String translation) {
   return Row(
     children: [
-      appText(translation),
+      appText(translation, AppColors.primaryText),
       Radio<Animal>(
         value: Animal.boar,
         groupValue: context.read<AlertBlocs>().state.animal,

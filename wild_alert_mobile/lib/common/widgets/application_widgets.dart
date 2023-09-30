@@ -3,15 +3,39 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../styles/colors.dart';
 
-Widget appText(String text) {
+Widget appText(String text, Color color) {
   return Text(
     text,
     style: TextStyle(
-        color: Colors.black, fontSize: 16.sp, fontWeight: FontWeight.normal),
+        color: color, fontSize: 16.sp, fontWeight: FontWeight.normal),
   );
 }
 
 Widget alertButton(Function() func ) {
+  return GestureDetector(
+    onTap: func,
+    child: Container(
+      margin: EdgeInsets.only(bottom: 10.h),
+      width: 50.w,
+      height: 50.h,
+      decoration: BoxDecoration(
+          color: AppColors.secondaryElement,
+          borderRadius: BorderRadius.all(Radius.circular(12.w)),
+          boxShadow: [
+            BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 1,
+                blurRadius: 2,
+                offset: const Offset(0, 1))
+          ]),
+      child: Center(
+          child: appText("+", AppColors.secondaryText)
+      ),
+    ),
+  );
+}
+
+Widget mainButton(Function() func) {
   return GestureDetector(
     onTap: func,
     child: Container(
@@ -29,18 +53,76 @@ Widget alertButton(Function() func ) {
                 offset: const Offset(0, 1))
           ]),
       child: Center(
-          child: appText("ZGŁOŚ")
+          child: appText("ZGŁOŚ", AppColors.primaryText)
       ),
     ),
   );
 }
 
-AppBar logoAppBar() {
-  return AppBar(
-    title: Container(
-      alignment: Alignment.centerLeft,
-      width: 200.w,
-      child: Image.asset('assets/Logo.png', fit: BoxFit.cover),
+// AppBar logoAppBar() {
+//   return AppBar(
+//     title: Container(
+//       alignment: Alignment.centerLeft,
+//       width: 200.w,
+//       child: Image.asset('assets/Logo.png', fit: BoxFit.cover),
+//     ),
+//   );
+// }
+
+Widget buildTextField(String text){
+  return Container(
+    width: 325.w,
+    height: 50.h,
+    decoration: BoxDecoration(
+      color: AppColors.primarySecondaryBackground,
+      borderRadius: BorderRadius.all(Radius.circular(15.w)),
+      border: Border.all(color: AppColors.primaryText)
     ),
+    child: Row(
+      children: [
+        Container(
+          width: 16.w,
+          height: 16.w,
+          margin: EdgeInsets.only(left: 12.w),
+          child: Image.asset('assets/logo.png'),
+        ),
+        SizedBox(
+          width: 270.w,
+          height: 50.h,
+          child: const TextField(
+            keyboardType: TextInputType.multiline,
+              decoration: InputDecoration(
+                hintText: "Lokalizacja",
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.transparent
+                  ),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.transparent
+                  ),
+                ),
+                disabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.transparent
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                      color: Colors.transparent
+                  ),
+                ),
+              ),
+          ),
+        ),
+        Container(
+          width: 16.w,
+          height: 16.w,
+          margin: EdgeInsets.only(right: 12.w),
+          child: Image.asset('assets/location.png'),
+        ),
+      ],
+    )
   );
 }
